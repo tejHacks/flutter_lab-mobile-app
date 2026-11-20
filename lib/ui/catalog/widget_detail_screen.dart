@@ -60,7 +60,7 @@ class WidgetDetailScreen extends StatelessWidget {
             ]),
           ],
           const SizedBox(height: 16),
-          Text('Full API docs: api.flutter.dev → search "${entry.name.split(' ').first}"',
+          Text('Full API docs: api.flutter.dev (search "${entry.name.split(' ').first}")',
               style: theme.textTheme.bodySmall!.copyWith(color: theme.colorScheme.onSurfaceVariant)),
         ],
       ),

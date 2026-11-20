@@ -32,7 +32,14 @@ class ChoiceRow<T> extends StatelessWidget {
             children: [
               for (final v in values)
                 ChoiceChip(
-                  label: Text(nameOf?.call(v) ?? _name(v)),
+                  // Colour options show a real colour swatch instead of text.
+                  label: v is Color
+                      ? Container(
+                          width: 18,
+                          height: 18,
+                          decoration: BoxDecoration(color: v, shape: BoxShape.circle),
+                        )
+                      : Text(nameOf?.call(v) ?? _name(v)),
                   selected: v == selected,
                   visualDensity: VisualDensity.compact,
                   onSelected: (_) => onSelected(v),
